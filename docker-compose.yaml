@@ -3,7 +3,7 @@ version: '3.8'
 services:
   # ASP.NET Core application service
   webapp:
-    image: 412969476391.dkr.ecr.ap-southeast-1.amazonaws.com/skybull/eternal-king:latest
+    image: 412969476391.dkr.ecr.ap-southeast-1.amazonaws.com/skybull/event:latest
     ports:
       - "5060:5060"
     environment:
