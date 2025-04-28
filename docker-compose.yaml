@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  # ASP.NET Core application service
+  webapp:
+    image: 412969476391.dkr.ecr.ap-southeast-1.amazonaws.com/skybull/eternal-king:latest
+    ports:
+      - "5060:5060"
+    environment:
+      - ASPNETCORE_HTTP_PORTS=5060
+      - TelegramBot__Token=8199503932:AAFN_2SFW1u_clUtP8YnAEDU-osUZTudLPU
+      - MongoDb__ConnectionString=mongodb+srv://skybulltest:bNJA0ddcCnNllB44@cluster0.xzeaywt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - ConnectionStrings__DefaultConnection=Host=192.168.1.46;Port=5432;Database=test;Username=postgres;Password=0matkhau
+      - TelegramBot__WebAppUrl=https://eternalking.netlify.app/
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
